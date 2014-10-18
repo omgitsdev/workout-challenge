@@ -74,7 +74,12 @@
     </section>
   </div>
 <div> -->          
-
+<div class='new-user'>
+  <h3>Welcome, new user!</h3>
+  <input type='text' id='new-user'>
+  <a href='/groups' id='create-new-user'><button type='button'>Create!</button></a>
+</div>
+<div class='user-list'>
 <table>
   <thead>
     <tr>
@@ -98,3 +103,4 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+</div>
