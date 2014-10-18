@@ -10,7 +10,7 @@
 
   <tbody>
     <% @groups.each do |group| %>
-      <% if group.isPublic == false %>
+      <% if group.isPublic == true %>
       <tr>
         <td><%= group.name %></td>
         <td><%= link_to 'Show', group %></td>
