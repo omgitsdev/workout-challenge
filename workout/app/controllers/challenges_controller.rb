@@ -25,6 +25,9 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
+    if challenge_params[:frequency] == 'custom'
+      challenge_params[:frequency] == params[:custom_frequency]
+    end
     @challenge = Challenge.new(challenge_params)
 
     respond_to do |format|

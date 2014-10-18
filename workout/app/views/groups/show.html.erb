@@ -6,9 +6,20 @@
 </p>
 
 <p>
-  <strong>Ispublic:</strong>
+  <strong>Public:</strong>
   <%= @group.isPublic %>
 </p>
 
+<p>
+  <strong>Admin:</strong>
+  <%= @group.admin.username %>
+</p>
+<% @group.challenges.each do |challenge| %>
+  <%= link_to challenge.name, challenge_path(challenge) %>
+<% end %>
+<br>
+<% if current_user == @group.admin %>
+<%= link_to 'Create Challenge', new_challenge_path %> |
 <%= link_to 'Edit', edit_group_path(@group) %> |
+<% end %>
 <%= link_to 'Back', groups_path %>

@@ -17,7 +17,14 @@
   </div>
   <div class="field">
     <%= f.label :frequency %><br>
-    <%= f.text_field :frequency %>
+    <%= f.select :frequency, options_for_select([["Daily", "daily"], ["Weekly", "weekly"], ["Monthly", "monthly"],["Custom","custom"]]),:id=>"frequency" %>
+  </div>
+  <div class="day-checkbox" style='display:none;'>
+    <input type='radio' name="custom_frequency" value="2">Twice a week<br>
+    <input type='radio' name="custom_frequency" value="3">Three times a week<br>
+    <input type='radio' name="custom_frequency" value="4">Four times a week<br>
+    <input type='radio' name="custom_frequency" value="5">Five times a week<br>
+    <input type='radio' name="custom_frequency" value="6">Six times a week<br>
   </div>
   <div class="field">
     <%= f.label :wager %><br>
