@@ -11,26 +11,24 @@
 
 .signup-panel {
   padding: 15px;
-}
-
-.signup-panel i {
-  font-size: 30px;
-  line-height: 50px;
-  color: #999;
-}
-
-.signup-panel form input, .signup-panel form span {
-  height: 50px;
-}
-
-.signup-panel .welcome {
-  font-size: 26px;
-  text-align: center;
-  margin-left: 0;
-}
-
-.signup-panel .button {
-  margin-left: 35%;
+  i {
+    font-size: 30px;
+    line-height: 50px;
+    color: #999;
+  }
+  form {
+    input, span {
+      height: 50px;
+    }
+  }
+  .welcome {
+    font-size: 26px;
+    text-align: center;
+    margin-left: 0;
+  }
+  .button {
+    margin-left: 35%;
+  }
 }
 
 section.active {
@@ -41,6 +39,7 @@ p.title {
   border-bottom: 1px solid #cccccc !important;
 }
 
-.content{
+.content {
   height: 450px;
-}
+}              
+            
