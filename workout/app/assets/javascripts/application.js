@@ -14,19 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-var user;
-$(document).ready(function() {
-  $('#create-new-user').click(function() {
-    var name = $('#new-user').val();
-    $.ajax({
-      type:'POST',
-      url:'/users',
-      data:{user:{username:name}}
-    });
-  });
-  if (user == null) {
-    $('.user-list').hide();
-    $('.new-user').show();
-  }
-});
