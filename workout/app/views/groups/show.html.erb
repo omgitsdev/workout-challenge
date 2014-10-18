@@ -15,7 +15,7 @@
   <%= @group.admin.username %>
 </p>
 <% @group.challenges.each do |challenge| %>
-  <%= link_to challenge.name, challenge_path(challenge) %>
+  <%= link_to challenge.name, challenge_path(challenge) %><br>
 <% end %>
 <br>
 <% if current_user == @group.admin %>

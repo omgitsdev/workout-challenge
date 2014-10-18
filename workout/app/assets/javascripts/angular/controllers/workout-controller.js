@@ -4,7 +4,8 @@ app.controller('WorkoutController', ['$scope', 'Challenge', 'Group', 'Activity',
   $scope.frequencySelect = function() {
     if ($scope.frequency == "custom") {
       $scope.frequencyCheckboxes = true;
+    } else {
+      $scope.frequencyCheckboxes = false;
     }
   }
-
 }]);
