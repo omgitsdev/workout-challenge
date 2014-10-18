@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.sort
   end
 
   # GET /groups/1
@@ -25,6 +25,8 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
+    binding.pry
+    group_params[:admin_id=>current_user.id]
     @group = Group.new(group_params)
 
     respond_to do |format|
@@ -70,6 +72,6 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:name, :isPublic)
+      params.require(:group).permit(:name, :isPublic, :admin_id)
     end
 end

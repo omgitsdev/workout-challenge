@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :isPublic %><br>
-    <%= f.check_box :isPublic %>
+    <%= f.check_box :isPublic %>  True
+  </div>
+  <div class="field" style="display:none;">
+    <%= f.label :admin_id %><br>
+    <%= f.text_field :admin_id, value:current_user.id %>  True
   </div>
   <div class="actions">
     <%= f.submit %>
