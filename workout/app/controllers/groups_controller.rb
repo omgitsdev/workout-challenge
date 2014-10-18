@@ -25,10 +25,7 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-    binding.pry
-    group_params[:admin_id=>current_user.id]
     @group = Group.new(group_params)
-
     respond_to do |format|
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
