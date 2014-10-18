@@ -15,15 +15,23 @@ shehzan = User.create(username: "Shehzan", email: "shehzan@mks.com", password: '
 
 mks = Group.create(name:"mks", isPublic: true)
 shaan.group = mks
+shaan.save
 harsh.group = mks
+harsh.save
 shehzan.group = mks
+shehzan.save
+mks.admin = shaan
 mks.save
 
 
 sfc2 = Group.create(name:"SFC2", isPublic: false)
 dev.group = sfc2
+dev.save
 stephan.group = sfc2
+stephan.save
 peng.group = sfc2
+peng.save
+sfc2.admin = dev
 sfc2.save
 
 running = Challenge.new(name:"Run 1 mile", frequency: 'daily', wager: 10, duration: 30)
