@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'foundation-rails'
 gem 'pry-byebug'
+gem 'angularjs-rails'

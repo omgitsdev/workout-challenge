@@ -25,10 +25,14 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
-    if challenge_params[:frequency] == 'custom'
-      challenge_params[:frequency] == params[:custom_frequency]
+    # binding.pry
+    if params[:frequency] == 'custom'
+      params[:frequency] = params[:custom_frequency]
+    else
+      params[:frequency] = params[:frequency]
     end
-    @challenge = Challenge.new(challenge_params)
+    # binding.pry
+    @challenge = Challenge.new(name: params[:name], frequency: params[:frequency], wager: params[:wager], duration: params[:duration])
 
     respond_to do |format|
       if @challenge.save
@@ -72,7 +76,7 @@ class ChallengesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def challenge_params
-      params.require(:challenge).permit(:name, :frequency, :wager, :duration)
-    end
+    # def challenge_params
+    #   params.require(:challenge).permit(:name, :frequency, :wager, :duration)
+    # end
 end

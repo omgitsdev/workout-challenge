@@ -10,31 +10,37 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :frequency %><br>
-    <%= f.select :frequency, options_for_select([["Daily", "daily"], ["Weekly", "weekly"], ["Monthly", "monthly"],["Custom","custom"]]),:id=>"frequency" %>
-  </div>
-  <div class="day-checkbox" style='display:none;'>
-    <input type='radio' name="custom_frequency" value="2">Twice a week<br>
-    <input type='radio' name="custom_frequency" value="3">Three times a week<br>
-    <input type='radio' name="custom_frequency" value="4">Four times a week<br>
-    <input type='radio' name="custom_frequency" value="5">Five times a week<br>
-    <input type='radio' name="custom_frequency" value="6">Six times a week<br>
-  </div>
-  <div class="field">
-    <%= f.label :wager %><br>
-    <%= f.number_field :wager %>
-  </div>
-  <div class="field">
-    <%= f.label :duration %><br>
-    <%= f.number_field :duration %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  <form method="post" action="/challenges">
+    <div class="field">
+      <label for='name'>Name:</label><br>
+      <input id='name' name='name'><br>
+    </div>
+    <div class="field">
+      <label for='frequency'>frequency</label><br>
+      <select id='frequency' ng-change='frequencySelect()' ng-model="frequency" name="frequency">
+        <option value='daily'>Daily</option>
+        <option value='weekly'>Weekly</option>
+        <option value='monthly'>Monthly</option>
+        <option value='custom'>Custom</option>
+      </select>
+    </div>
+    <div class="day-checkbox" ng-show='frequencyCheckboxes'>
+      <input type='radio' name="custom_frequency" value="2"> Twice a week<br>
+      <input type='radio' name="custom_frequency" value="3"> Three times a week<br>
+      <input type='radio' name="custom_frequency" value="4"> Four times a week<br>
+      <input type='radio' name="custom_frequency" value="5"> Five times a week<br>
+      <input type='radio' name="custom_frequency" value="6"> Six times a week<br>
+    </div>
+    <div class="field">
+      <label for='wager'>Wager:</label><br>
+      <input id='wager' name='wager'><br>
+    </div>
+    <div class="field">
+      <label for='duration'>Duration:</label><br>
+      <input id='duration' name='duration'><br>
+    </div>
+    <div class="actions">
+      <input type="submit" value="submit">
+    </div>
+</form>
+<%end%>
