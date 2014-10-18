@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-dev = User.create(username: "Dev")
-stephan = User.create(username: "Stephan")
-peng = User.create(username: "Peng")
-shaan = User.create(username: "Shaan")
-harsh = User.create(username: "Harsh")
-shehzan = User.create(username: "Shehzan")
+dev = User.create(username: "Dev", email: "dev@mks.com", password: '11111111')
+stephan = User.create(username: "Stephan", email: "stephan@mks.com", password: '11111111')
+peng = User.create(username: "Peng", email: "peng@mks.com", password: '11111111')
+shaan = User.create(username: "Shaan", email: "shaan@mks.com", password: '11111111')
+harsh = User.create(username: "Harsh", email: "harsh@mks.com", password: '11111111')
+shehzan = User.create(username: "Shehzan", email: "shehzan@mks.com", password: '11111111')
 
 mks = Group.create(name:"mks", isPublic: true)
 shaan.group = mks
