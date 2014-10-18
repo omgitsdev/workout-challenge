@@ -16,6 +16,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/new
   def new
     @challenge = Challenge.new
+    @challenge.group_id = params[:group_id]
   end
 
   # GET /challenges/1/edit
@@ -25,14 +26,14 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
-    # binding.pry
+    binding.pry
     if params[:frequency] == 'custom'
       params[:frequency] = params[:custom_frequency]
     else
       params[:frequency] = params[:frequency]
     end
     # binding.pry
-    @challenge = Challenge.new(name: params[:name], frequency: params[:frequency], wager: params[:wager], duration: params[:duration])
+    @challenge = Challenge.new(name: params[:name], frequency: params[:frequency], wager: params[:wager], duration: params[:duration],group_id:params[:group_id])
 
     respond_to do |format|
       if @challenge.save

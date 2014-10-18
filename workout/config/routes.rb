@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :activities
 
-  resources :challenges
 
-  resources :groups
+  resources :groups do
+    resources :challenges, :only => [:new]
+  end
+  resources :challenges, :only => [:update, :destroy, :show, :index, :create, :edit]
 
   resources :users
 

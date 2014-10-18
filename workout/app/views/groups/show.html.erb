@@ -19,7 +19,7 @@
 <% end %>
 <br>
 <% if current_user == @group.admin %>
-<%= link_to 'Create Challenge', new_challenge_path %> |
+<%= link_to 'Create Challenge',  new_group_challenge_path(@group) %> |
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <% end %>
 <%= link_to 'Back', groups_path %>
