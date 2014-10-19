@@ -6,7 +6,7 @@
 
 <p>
   <% if current_user.group == @group %>
-    <%= link_to 'record activity', new_activity_path(@challenge, @group) %>
+    <%= link_to 'record activity', new_activity_path(@challenge) %>
   <% end %>
 </p>
 
@@ -31,6 +31,6 @@
 </p>
 
 <% if current_user == @group.admin%>
-  <%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+  <%= link_to 'Edit', edit_challenge_path %> |
 <% end %>
 <%= link_to 'Back', challenges_path %>
