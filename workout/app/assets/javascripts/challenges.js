@@ -2,13 +2,13 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-  $('select').change(function() {
-    if ($('#frequency').val() === 'custom') {
-      $('.day-checkbox').show();
-    } else {
-      $('.day-checkbox').hide();
-    }
-  });
+$('select').change(function() {
+  if ($('#frequency').val() === 'custom') {
+    $('.day-checkbox').show();
+  } else {
+    $('.day-checkbox').hide();
+  }
+});
 
 $('.record_activity').click(function(){
   var challenge_id = $(this).attr('id').slice(16);
@@ -21,6 +21,8 @@ $('.record_activity').click(function(){
       }
     }
   }).done(function(data) {
+    $('#record_activity_'+challenge_id).hide();
+    $('#done_'+challenge_id).show();
   });
 });
 

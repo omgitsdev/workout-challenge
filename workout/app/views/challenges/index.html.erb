@@ -18,7 +18,8 @@
         <td><%= challenge.duration %></td>
         <% if current_user.group == @group %>
           <td>
-            <button class="record_activity" id="record_activity <%= challenge.id %>">Record Activity</button>
+            <button class="record_activity" id="record_activity_<%= challenge.id %>">Done?</button>
+            <button class="done" id='done_<%= challenge.id %>' style="display:none;background-color:green;">Done!</button>
           </td>
         <% end %>
         <% if current_user == @group.admin %>
