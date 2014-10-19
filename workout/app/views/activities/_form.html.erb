@@ -16,9 +16,8 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :challenge_id %><br>
-    <%= f.value @challenge.id %>
+  <div class="field" style="display:none;">
+    <%= f.text_field :challenge_id, value: @activity.challenge_id%>
   </div>
 
   <div class="actions">
