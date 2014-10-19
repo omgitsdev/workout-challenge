@@ -11,13 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs  
+//= require jquery_ujs
 //= require foundation
 //= require turbolinks
 //= require angular
 //= require angular-resource
 //= require angular-animate
-//= require_tree ./angular
+//= require_tree .
+
 
 
 $(function(){ $(document).foundation(); });

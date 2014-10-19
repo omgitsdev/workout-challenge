@@ -3,7 +3,6 @@
 <head>
   <title>Workout</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -24,10 +23,11 @@
     </section>
   </nav>
   <div ng-app="WorkoutApp">
-    <div ng-controller='WorkoutController'> 
+    <div ng-controller='WorkoutController'>
 
       <%= yield %>
     </div>
   </div>
 </body>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>
