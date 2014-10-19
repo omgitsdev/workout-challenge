@@ -1,41 +1,46 @@
-<div class="row">
-  <div class="large-12 columns">
-    <h1>Show Group</h1>
-  </div>
-</div>
-<hr>
-<div class="row">
+<% provide(:title, "Show Groups") %>
   
-  <div class="large-12 columns">
+  <div class="large-12 columns show-groups">
     <p id="notice"><%= notice %></p>
+    <div class="show-groups-window">
+      
+      <div class="row show-groups-row">
+        <strong>Name:</strong>
+        <%= @group.name %>
+      </div>
+      
+      <div class="row show-groups-row">
+        <strong>Public:</strong>
+        <%= @group.isPublic %>
+      </div>
+      
+      <div class="row show-groups-row">
+        <strong>Admin:</strong>
+        <%= @group.admin.username %>
+      </div>
 
-    <p>
-      <strong>Name:</strong>
-      <%= @group.name %>
-    </p>
-    
-    <p>
-      <strong>Public:</strong>
-      <%= @group.isPublic %>
-    </p>
-    
-    <p>
-      <strong>Admin:</strong>
-      <%= @group.admin.username %>
-    </p>
-    <% @group.challenges.each do |challenge| %>
-      <%= link_to challenge.name, challenge_path(challenge) %><br>
-    <% end %>
-    <br>
-    <% if current_user == @group.admin %>
-    <%= link_to 'Create Challenge',  new_group_challenge_path(@group) %> |
-    <%= link_to 'Edit', edit_group_path(@group) %> |
-    <% end %>
-    <%= link_to 'Back', groups_path %>
-    <a href='#' id='join-group'>Join</a>
-    
-    <input type='text' value='<%= current_user.id %>' style='display:none;' id='user-id'>
-    <input type='text' value='<%= @group.id %>' style='display:none;' id='group-id'>
+      <div class="row show-groups-row">
+        <% @group.challenges.each do |challenge| %>
+          <%= link_to challenge.name, challenge_path(challenge) %><br>
+        <% end %>
+      </div>
+
+      <div class="row show-groups-row">
+        <% if current_user == @group.admin %>
+        <%= link_to 'Create Challenge',  new_group_challenge_path(@group) %> |
+        <%= link_to 'Edit', edit_group_path(@group) %> |
+        <% end %>
+      </div>
+
+      <div class="row show-groups-row">
+        <%= link_to 'Back', groups_path class: button [tiny small large] %>
+        <a href='#' class="button [tiny small large]" id='join-group' >Join</a>
+      </div>
+      
+      <input type='text' value='<%= current_user.id %>' style='display:none;' id='user-id'>
+      <input type='text' value='<%= @group.id %>' style='display:none;' id='group-id'>
+      
+    </div>
 
   </div>
-</div>
+

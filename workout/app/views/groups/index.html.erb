@@ -1,34 +1,13 @@
-<div class="row header">
-  <div class="large-12 columns">
-    <h1>List Groups</h1>
-  </div>
-</div>
 
-<hr/>
-<div class="icon-bar vertical five-up">
-  <a class="item">
-    <i class="fi-home"></i>
-  </a>
-  <a class="item">
-    <i class="fi-bookmark"></i>
-  </a>
-  <a class="item">
-    <i class="fi-info"></i>
-  </a>
-  <a class="item">
-    <i class="fi-mail"></i>
-  </a>
-  <a class="item">
-    <i class="fi-like"></i>
-  </a>
-</div>
-<div class="row">
-  <div class="large-11 columns">
-    <table>
+<% provide(:title, "All Groups") %>
+
+
+  <div class="large-12 columns">
+    <table class="groups-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th colspan="3"></th>
+          <th>Group Name</th>
+          <th colspan="3">Details</th>
         </tr>
       </thead>
       <tbody>
@@ -40,18 +19,18 @@
             <% if current_user == group.admin %>
             <td><%= link_to 'Edit', edit_group_path(group) %></td>
             <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
+          <% end %>
           </tr>
           <% end %>
         <% end %>
       </tbody>
     </table>
-  </div>
-  <hr/>
-  <%= link_to 'New Group', new_group_path %>
-</div>
 
-<hr/>
+    <hr/>
+
+    <%= link_to 'New Group', new_group_path %>
+  </div>
+
 
 
 
