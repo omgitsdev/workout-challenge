@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require jquery_ujs  
 //= require foundation
 //= require turbolinks
 //= require angular
@@ -21,3 +21,18 @@
 
 
 $(function(){ $(document).foundation(); });
+$(document).ready(function() {
+  $("#join-group").on('click', function(e) {
+    console.log('a');
+    e.preventDefault();
+    var id = $('#user-id').val();
+    var group_id = $('#group-id').val();
+    $.ajax({
+        type: "PATCH",
+        url: '/users/' + id,
+        data: {id:id,user:{group_id:group_id}},
+    }).done(function(data) {
+        console.log(data);
+    });
+  });
+});

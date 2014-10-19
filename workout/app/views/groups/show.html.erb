@@ -23,4 +23,6 @@
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <% end %>
 <%= link_to 'Back', groups_path %>
-<%= link_to 'Join', groups_path, :id=>"join-group" %>
+<a href='' id='join-group'>Join</a>
+<input type='text' value='<%= current_user.id %>' style='display:none;' id='user-id'>
+<input type='text' value='<%= @group.id %>' style='display:none;' id='group-id'>
