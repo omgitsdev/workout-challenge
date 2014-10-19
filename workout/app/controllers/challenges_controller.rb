@@ -11,6 +11,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/1
   # GET /challenges/1.json
   def show
+    @group = Challenge.find(params[:id]).group
   end
 
   # GET /challenges/new
