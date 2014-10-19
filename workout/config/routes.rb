@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :activities
 
 
   resources :groups do
     resources :challenges, :only => [:new]
   end
-  resources :challenges, :only => [:update, :destroy, :show, :index, :create, :edit]
+  resources :challenges, :only => [:update, :destroy, :show, :index, :create, :edit] do
+    resources :activities, :only => [:new]
+  end
+
+  resources :activities, :only => [:update, :destroy, :show, :index, :create, :edit]
 
   resources :users
 

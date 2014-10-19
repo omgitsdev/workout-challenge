@@ -6,7 +6,7 @@
 
 <p>
   <% if current_user.group == @group %>
-    <%= link_to 'record activity', new_activity_path(@challenge) %>
+    <%= link_to 'record activity', new_challenge_activity_path(@challenge) %>
   <% end %>
 </p>
 
