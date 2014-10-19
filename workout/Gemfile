@@ -40,5 +40,6 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 gem 'pry-byebug'
 gem 'angularjs-rails'

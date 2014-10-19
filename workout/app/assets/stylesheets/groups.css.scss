@@ -1,3 +1,83 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  background: #636a7a;
+  margin-left: 0px;
+  margin-right: 0px;
+  right: 0px;
+  padding-left: 61px;
+  max-width: 100%;
+}
+
+.header h1 {
+  color: #c2c6ce;
+  font-size: 3em;
+}
+
+.main-container {
+  background: #555A6F;
+  
+}
+
+body {
+  background: #555A6F;
+}
+
+.groups-table {
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  background: #555A6F;
+}
+
+.show-groups {
+  font-weight: normal;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.3em;
+
+}
+
+.show-groups-row {
+  
+}
+
+.show-groups-window {
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding: 60px;
+
+}
+
+
+thead, tbody, tr, th, td {
+  background: #555A6F;
+  border: none;
+  /*border-bottom: 1px solid #c2c6ce;*/
+}
+table thead tr th, table thead tr td {
+  color: #c2c6ce;
+  font-size: 1.7em;
+  font-weight: normal;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+
+}
+
+
+.item1 {
+  background: #32394e;
+}
+.item2 {
+  background: #fc6f6d;
+}
+.item3 {
+  background: #ffc67d;
+}
+.item4 {
+  background: #cd97ee;
+}
+.item5 {
+  background: #3ce3bd;
+}

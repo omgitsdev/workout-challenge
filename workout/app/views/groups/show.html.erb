@@ -1,28 +1,37 @@
+<% provide(:title, "Show Groups") %>
+<div class="large-12 columns show-groups">
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<p>
-  <strong>Public:</strong>
-  <%= @group.isPublic %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @group.admin.username %>
-</p>
-<%= render :template=>"challenges/index", :@group=>@group %>
-<br>
-<% if current_user == @group.admin %>
-<%= link_to 'Create Challenge',  new_group_challenge_path(@group) %> |
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<% end %>
-<%= link_to 'Back', groups_path %>
-<% if current_user.group_id != @group.id %>
-  <a href='' id='join-group'>Join</a>
-<% end %>
+<div class="show-groups-window">
+  <div class="row show-groups-row">
+    <strong>Name:</strong>
+    <%= @group.name %>
+  </div>
+  
+  <div class="row show-groups-row">
+    <strong>Public:</strong>
+    <%= @group.isPublic %>
+  </div>
+  
+  <div class="row show-groups-row">
+    <strong>Admin:</strong>
+    <%= @group.admin.username %>
+  </div>
+  <div class="row show-groups-row">
+    <%= render :template=>"challenges/index", :@group=>@group %>
+  </div>
+  <div class="row show-groups-row">
+    <% if current_user == @group.admin %>
+    <%= link_to 'Create Challenge',  new_group_challenge_path(@group) %> |
+    <%= link_to 'Edit', edit_group_path(@group) %> |
+    <% end %>
+  </div>
+  <div class="row show-groups-row">
+    <%= link_to 'Back', groups_path %>
+    <% if current_user.group_id != @group.id %>
+      <a href='' id='join-group'>Join</a>
+    <% end %>
+  </div>
 <input type='text' value='<%= current_user.id %>' style='display:none;' id='user-id'>
 <input type='text' value='<%= @group.id %>' style='display:none;' id='group-id'>
+</div>
+</div>

@@ -1,10 +1,11 @@
-<h1>Listing groups</h1>
+<% provide(:title, "All Groups") %>
 
-<table>
+<div class="large-12 columns">
+<table class="groups-table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th>Group Name</th>
+      <th colspan="3">Details</th>
     </tr>
   </thead>
 
@@ -27,5 +28,6 @@
 <% if Group.find_by(admin_id:current_user.id) == nil %>
 <%= link_to 'New Group', new_group_path %>
 <% end %>
+</div>
 
   

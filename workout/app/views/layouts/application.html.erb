@@ -9,7 +9,7 @@
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <h1><%= link_to "My Site", root_path %></h1>
+        <h1><%= link_to "Challengr", root_path %></h1>
       </li>
     </ul>
 
@@ -22,9 +22,33 @@
       </ul>
     </section>
   </nav>
-  <div ng-app="WorkoutApp">
-    <div ng-controller='WorkoutController'>
 
+  <div class="row header">
+    <div class="large-12 columns">
+      <h1><%= yield(:title) %></h1>
+    </div>
+  </div>
+
+  <div class="icon-bar vertical five-up left">
+    <a class="item item1">
+      <i class="fi-home"></i>
+    </a>
+    <a class="item item2">
+      <i class="fi-plus"></i>
+    </a>
+    <a class="item item3">
+      <i class="fi-torsos-all"></i>
+    </a>
+    <a class="item item4">
+      <i class="fi-comment"></i>
+    </a>
+    <a class="item item5">
+      <i class="fi-like"></i>
+    </a>
+  </div>
+
+  <div class='main-container'>
+    <div class="row main-container"> 
       <%= yield %>
     </div>
   </div>
