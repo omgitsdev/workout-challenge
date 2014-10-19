@@ -4,7 +4,16 @@
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
-
+<p>
+  <strong>Member of:</strong>
+  <%= @group.name %>
+</p>
+<p>
+  <strong>Current challenges:</strong>
+  <% @challenges.each do |challenge| %>
+    <br><%= challenge.name %> | <%= link_to 'details', challenge_path(challenge) %>
+  <% end %>
+</p>
 <% if @user == current_user %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <% end %>
