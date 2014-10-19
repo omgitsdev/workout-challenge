@@ -24,7 +24,8 @@
   </tbody>
 </table>
 <br>
-
+<% if Group.find_by(admin_id:current_user.id) == nil %>
 <%= link_to 'New Group', new_group_path %>
+<% end %>
 
   
