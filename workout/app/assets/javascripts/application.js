@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require angular
 //= require angular-resource
+//= require angular-animate
 //= require_tree ./angular
 
 

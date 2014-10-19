@@ -18,14 +18,14 @@
     </div>
     <div class="field">
       <label for='frequency'>frequency</label><br>
-      <select id='frequency' ng-change='frequencySelect()' ng-model="frequency" name="frequency">
+      <select id='frequency' name="frequency">
         <option value='daily'>Daily</option>
         <option value='weekly'>Weekly</option>
         <option value='monthly'>Monthly</option>
         <option value='custom'>Custom</option>
       </select>
     </div>
-    <div class="day-checkbox" ng-show='frequencyCheckboxes'>
+    <div class="day-checkbox">
       <input type='radio' name="custom_frequency" value="2"> Twice a week<br>
       <input type='radio' name="custom_frequency" value="3"> Three times a week<br>
       <input type='radio' name="custom_frequency" value="4"> Four times a week<br>
@@ -46,3 +46,12 @@
     </div>
 </form>
 <%end%>
+<script>
+  $('select').change(function() {
+    if ($('#frequency').val() === 'custom') {
+      $('.day-checkbox').show();
+    } else {
+      $('.day-checkbox').hide();
+    }
+  });
+</script>
