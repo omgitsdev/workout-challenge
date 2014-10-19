@@ -23,7 +23,6 @@
 $(function(){ $(document).foundation(); });
 $(document).ready(function() {
   $("#join-group").on('click', function(e) {
-    console.log('a');
     e.preventDefault();
     var id = $('#user-id').val();
     var group_id = $('#group-id').val();
@@ -32,7 +31,8 @@ $(document).ready(function() {
         url: '/users/' + id,
         data: {id:id,user:{group_id:group_id}},
     }).done(function(data) {
-        console.log(data);
+        var newUser = data.username;
+        $('body').append("<p>" + newUser + " has joined the group.</p>");
     });
   });
 });
