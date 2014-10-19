@@ -1,30 +1,58 @@
-<h1>Listing groups</h1>
+<div class="row header">
+  <div class="large-12 columns">
+    <h1>List Groups</h1>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @groups.each do |group| %>
-      <% if group.isPublic == true %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= link_to 'Show', group %></td>
-        <% if current_user == group.admin %>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<hr/>
+<div class="icon-bar vertical five-up">
+  <a class="item">
+    <i class="fi-home"></i>
+  </a>
+  <a class="item">
+    <i class="fi-bookmark"></i>
+  </a>
+  <a class="item">
+    <i class="fi-info"></i>
+  </a>
+  <a class="item">
+    <i class="fi-mail"></i>
+  </a>
+  <a class="item">
+    <i class="fi-like"></i>
+  </a>
+</div>
+<div class="row">
+  <div class="large-11 columns">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @groups.each do |group| %>
+          <% if group.isPublic == true %>
+          <tr>
+            <td><%= group.name %></td>
+            <td><%= link_to 'Show', group %></td>
+            <% if current_user == group.admin %>
+            <td><%= link_to 'Edit', edit_group_path(group) %></td>
+            <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+          <% end %>
         <% end %>
-      </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
-<br>
+      </tbody>
+    </table>
+  </div>
+  <hr/>
+  <%= link_to 'New Group', new_group_path %>
+</div>
 
-<%= link_to 'New Group', new_group_path %>
+<hr/>
+
+
 
   

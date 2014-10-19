@@ -1,28 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Show Group</h1>
+  </div>
+</div>
+<hr>
+<div class="row">
+  
+  <div class="large-12 columns">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @group.name %>
+    </p>
+    
+    <p>
+      <strong>Public:</strong>
+      <%= @group.isPublic %>
+    </p>
+    
+    <p>
+      <strong>Admin:</strong>
+      <%= @group.admin.username %>
+    </p>
+    <% @group.challenges.each do |challenge| %>
+      <%= link_to challenge.name, challenge_path(challenge) %><br>
+    <% end %>
+    <br>
+    <% if current_user == @group.admin %>
+    <%= link_to 'Create Challenge',  new_group_challenge_path(@group) %> |
+    <%= link_to 'Edit', edit_group_path(@group) %> |
+    <% end %>
+    <%= link_to 'Back', groups_path %>
+    <a href='#' id='join-group'>Join</a>
+    
+    <input type='text' value='<%= current_user.id %>' style='display:none;' id='user-id'>
+    <input type='text' value='<%= @group.id %>' style='display:none;' id='group-id'>
 
-<p>
-  <strong>Public:</strong>
-  <%= @group.isPublic %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @group.admin.username %>
-</p>
-<% @group.challenges.each do |challenge| %>
-  <%= link_to challenge.name, challenge_path(challenge) %><br>
-<% end %>
-<br>
-<% if current_user == @group.admin %>
-<%= link_to 'Create Challenge',  new_group_challenge_path(@group) %> |
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<% end %>
-<%= link_to 'Back', groups_path %>
-<a href='' id='join-group'>Join</a>
-<input type='text' value='<%= current_user.id %>' style='display:none;' id='user-id'>
-<input type='text' value='<%= @group.id %>' style='display:none;' id='group-id'>
+  </div>
+</div>

@@ -7,5 +7,5 @@ app.controller('WorkoutController', ['$scope', 'Challenge', 'Group', 'Activity',
     } else {
       $scope.frequencyCheckboxes = false;
     }
-  }
+  };
 }]);
