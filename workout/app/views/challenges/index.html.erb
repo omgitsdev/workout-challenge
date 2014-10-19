@@ -1,9 +1,7 @@
-<h1>Listing challenges</h1>
-
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Description</th>
       <th>Frequency</th>
       <th>Wager</th>
       <th>Duration</th>
@@ -19,8 +17,10 @@
         <td><%= challenge.wager %></td>
         <td><%= challenge.duration %></td>
         <td><%= link_to 'Show', challenge %></td>
+        <% if current_user == @group.admin %>
         <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
         <td><%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

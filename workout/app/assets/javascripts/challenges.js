@@ -21,6 +21,8 @@ $('#record_activity').click(function(){
         challenge_id: challenge_id
       }
     }
+  }).done(function(data) {
+    $('.activity').append('<p>Good job!</p>');
   });
 });
 

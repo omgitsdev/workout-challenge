@@ -4,11 +4,13 @@
   <%= @group.name %>
 </p>
 
+<div class='activity'>
 <p>
   <% if current_user.group == @group %>
     <button id="record_activity">Record Activity</button>
   <% end %>
 </p>
+</div>
 
 <p>
   <strong>Name:</strong>
