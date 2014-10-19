@@ -13,6 +13,12 @@
 </div>
 
 <p>
+  <% if current_user.group == @group %>
+    <%= link_to 'record activity', new_challenge_activity_path(@challenge) %>
+  <% end %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @challenge.name %>
 </p>
