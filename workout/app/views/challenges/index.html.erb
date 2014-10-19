@@ -16,7 +16,11 @@
         <td><%= challenge.frequency %></td>
         <td><%= challenge.wager %></td>
         <td><%= challenge.duration %></td>
-        <td><%= link_to 'Show', challenge %></td>
+        <% if current_user.group == @group %>
+          <td>
+            <button class="record_activity" id="record_activity <%= challenge.id %>">Record Activity</button>
+          </td>
+        <% end %>
         <% if current_user == @group.admin %>
         <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
         <td><%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,6 +29,5 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 

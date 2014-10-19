@@ -10,9 +10,8 @@
     }
   });
 
-$('#record_activity').click(function(){
-  var user_id = $('#user_id').val();
-  var challenge_id = $('#challenge_id').val();
+$('.record_activity').click(function(){
+  var challenge_id = $(this).attr('id').slice(16);
   $.ajax({
     type: 'post',
     url: '/activities',
@@ -22,7 +21,6 @@ $('#record_activity').click(function(){
       }
     }
   }).done(function(data) {
-    $('.activity').append('<p>Good job!</p>');
   });
 });
 

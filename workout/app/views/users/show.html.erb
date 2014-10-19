@@ -4,6 +4,7 @@
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
+<% if !@group.nil? %>
 <p>
   <strong>Member of:</strong>
   <%= @group.name %>
@@ -14,6 +15,7 @@
     <br><%= challenge.name %> | <%= link_to 'details', challenge_path(challenge) %>
   <% end %>
 </p>
+<% end %>
 <% if @user == current_user %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <% end %>

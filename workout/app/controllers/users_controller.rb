@@ -12,7 +12,9 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @group = User.find(params[:id]).group
-    @challenges = @group.challenges
+    if !@group.nil?
+      @challenges = @group.challenges
+    end
   end
 
   # GET /users/new
