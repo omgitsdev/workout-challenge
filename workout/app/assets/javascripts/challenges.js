@@ -9,3 +9,18 @@
       $('.day-checkbox').hide();
     }
   });
+
+$('#record_activity').click(function(){
+  var user_id = $('#user_id').val();
+  var challenge_id = $('#challenge_id').val();
+  $.ajax({
+    type: 'post',
+    url: '/activities',
+    data: {
+      activity: {
+        challenge_id: challenge_id
+      }
+    }
+  });
+});
+

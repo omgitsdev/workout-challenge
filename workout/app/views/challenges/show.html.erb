@@ -6,7 +6,7 @@
 
 <p>
   <% if current_user.group == @group %>
-    <%= link_to 'record activity', new_challenge_activity_path(@challenge) %>
+    <button id="record_activity">Record Activity</button>
   <% end %>
 </p>
 
@@ -34,3 +34,5 @@
   <%= link_to 'Edit', edit_challenge_path %> |
 <% end %>
 <%= link_to 'Back', challenges_path %>
+
+<input type="text" id="challenge_id" value='<%=@challenge.id%>' style="display:none">
