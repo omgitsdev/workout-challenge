@@ -15,6 +15,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/new
   def new
+    @challenge = Challenge.find(params[:format].to_i)
     @activity = Activity.new
   end
 
