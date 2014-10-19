@@ -10,8 +10,9 @@ class ChallengesController < ApplicationController
 
   # GET /challenges/1
   # GET /challenges/1.json
-  def show
-    @group = Challenge.find(params[:id]).group
+   def show
+    @progress = @challenge.generate_calendar(current_user.id)
+    @group = @challenge.group
   end
 
   # GET /challenges/new
