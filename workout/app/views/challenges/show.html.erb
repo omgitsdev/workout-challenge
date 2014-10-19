@@ -7,13 +7,14 @@
 <div class='activity'>
 <p>
   <% if current_user.group == @group %>
-    <button class="record_activity" id="record_activity <%= @challenge.id %>">Record Activity</button>
+    <button class="record_activity" id="record_activity_<%= @challenge.id %>">Done?</button>
+    <button class="done" id='done_<%= @challenge.id %>' style="display:none;background-color:green;">Done!</button>
   <% end %>
 </p>
 </div>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Task:</strong>
   <%= @challenge.name %>
 </p>
 
@@ -24,12 +25,12 @@
 
 <p>
   <strong>Wager:</strong>
-  <%= @challenge.wager %>
+  $<%= @challenge.wager %>
 </p>
 
 <p>
   <strong>Duration:</strong>
-  <%= @challenge.duration %>
+  <%= @challenge.duration %> days
 </p>
 
 <% if current_user == @group.admin%>
